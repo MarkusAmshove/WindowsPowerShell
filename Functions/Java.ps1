@@ -6,5 +6,12 @@ function Set-JavaVersion([String] $version)
 
 function Get-JavaVersions
 {
-	gci $JAVA_PATH | Select Name
+	$currentVersion = Split-Path $env:JAVA_HOME -Leaf
+	gci $JAVA_PATH | Select -ExpandProperty Name | %{
+		if ($_ -eq $currentVersion)
+		{
+			return "* $_"
+		}
+		return $_
+	}  
 }
