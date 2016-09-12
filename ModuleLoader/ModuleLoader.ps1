@@ -16,7 +16,7 @@ function Import-ConfigureModule()
         $installPrompt = Read-Host "Should $moduleName be installed? Y/n"
         if($installPrompt -ne "n")
         {
-            Install-Module $moduleName
+            Install-Module $moduleName -ErrorAction SilentlyContinue
             Import-Module $moduleName -ErrorAction SilentlyContinue
             configure
         }

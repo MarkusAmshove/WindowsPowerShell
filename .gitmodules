@@ -1,0 +1,3 @@
+[submodule "ModuleLoader/git-status-cache-posh-client"]
+	path = ModuleLoader/git-status-cache-posh-client
+	url = https://github.com/cmarcusreid/git-status-cache-posh-client
