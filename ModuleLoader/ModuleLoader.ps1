@@ -1,11 +1,14 @@
 function Test-LoadedModule ($modulename)
 {
-    return (Get-Module -ListAvailable -Name $modulename)
+    return (Get-Module -Name $modulename)
 }
 
 function Import-ConfigureModule()
 {
-    Import-Module $moduleName -ErrorAction SilentlyContinue
+    if (-not (Test-LoadedModule $moduleName))
+    {
+        Import-Module $moduleName -ErrorAction SilentlyContinue
+    }
     if (Test-LoadedModule $moduleName)
     {
         configure

@@ -2,12 +2,12 @@ function gdp()
 {
     function isPointingAtRoot($folder) { return $folder -eq "\" -or $folder -eq "/" }
     function isSpecialPathCharacter($folder) { return $folder.Contains(":") -or $folder.Contains("~") }
-    
+
     # If called from command line, args will contain all folders
     $folders = $args
     # If called from another functions the space seperated folders are treated as one string
     if($args.count -eq 1){
-        $folders = $args.Split(' ') 
+        $folders = $args.Split(' ')
     }
     $pathsofar = ""
     foreach ($folder in $folders)

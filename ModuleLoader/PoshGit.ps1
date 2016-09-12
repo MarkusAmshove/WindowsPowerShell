@@ -3,7 +3,7 @@ function configure()
 {
     $GitPromptSettings.EnableStashStatus = $true
     Start-SshAgent -Quiet
-    function Global:prompt 
+    function Global:prompt
     {
         $realLASTEXITCODE = $LASTEXITCODE
 
